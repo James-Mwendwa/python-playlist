@@ -1,6 +1,14 @@
-def team(dictionary):
-    for key, val in dictionary.items():
-        print(f'The {key} have {val} NBA titles')
+## Sorting
+def team_count(dictionary):
+    titles = list(dictionary.values())
+    for title in set(titles):
+        num = titles.count(title)
+        print(f'There are {num} teams with {title} titles')
+
+
+# def team(dictionary):
+#     for key, val in dictionary.items():
+#         print(f'The {key} have {val} NBA titles')
 
 NBA_teams = {}
 
@@ -15,4 +23,5 @@ while True:
     else:
         break
 
-team(NBA_teams)
+# team(NBA_teams)
+team_count(NBA_teams)
