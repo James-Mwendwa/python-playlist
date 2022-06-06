@@ -1,15 +1,18 @@
-# same as javascript object notation
+def team(dictionary):
+    for key, val in dictionary.items():
+        print(f'The {key} have {val} NBA titles')
 
-teams = {
-    'football': 'PSG', 
-    'NBA': 'Lakers'
-}
+NBA_teams = {}
 
-teams['football']
+while True:
+    team_name = input('Enter the team name:')
+    team_titles = input('Enter number of titles:')
+    NBA_teams[team_name] = team_titles
 
-# to check if a key exists in a dictionary, we use 'key in dict'
+    another = input('Add another? (y/n)')
+    if another == 'y':
+        continue
+    else:
+        break
 
-'Bucks' in teams # returns false
-
-# you can get by full list of the keys using .keys() method
-teams.keys()
+team(NBA_teams)
