@@ -1,28 +1,10 @@
-class Planet:
-    shape = "round"  ## class level attribute
-
-    ## create attributes
-    def __init__(self, name, radius, gravity, system):
-        ##instant attributes
-        self.name = name
-        self.radius = radius
-        self.gravity = gravity
-        self.system = system
-
-    def orbit(self):
-        return f" {self.name} is orbiting around {self.system} "
-
-    @classmethod  ## has access to class level attributes
-    def commons(cls):
-        return f"All planets are {cls.shape} due to gravity "
-
-    @staticmethod  ## only take the parameters passed
-    def spin(speed="20000 m/s"):
-        return f"the planet spins at {speed} "
-
-
-## new instance of the class
+from space.planet import Planet
+from space.calc import planet_mass, planet_vol
 
 pluto = Planet("Pluto", 400000, 3.2, "Pluto System")
 
-print(Planet.spin("a very high speed"))
+
+pluto_mass = planet_mass(pluto.gravity, pluto.radius)
+pluto_vol = planet_vol(pluto.radius)
+
+print(f"{pluto.name} has a mass o f{pluto_mass} and a volume of {pluto_vol}")
